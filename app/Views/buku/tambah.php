@@ -57,7 +57,7 @@
                 <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
                 <div class="col-sm-6">
                     <div class="custom-file">
-                        <input type="file" class="form-control <?= isset($validation['sampul']) ? 'is-invalid' : '' ?>" id="sampul" name="sampul">
+                        <input type="file" class="custom-file-input <?= isset($validation['sampul']) ? 'is-invalid' : '' ?>" id="sampul" name="sampul">
                         <input type="hidden" id="sampulFileName" name="sampulFileName" value="<?= old('sampulFileName', session()->get('sampulSementara')); ?>">
                         <?php if (isset($validation['sampul'])) : ?>
                             <div id="sampulFeedback" class="invalid-feedback">
