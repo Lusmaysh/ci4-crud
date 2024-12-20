@@ -71,20 +71,21 @@
 
             <script>
                 document.getElementById('sampul').addEventListener('change', function(e) {
-                    var fileName = e.target.files[0].name;
+                    var fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
                     var fileLabel = document.getElementById('fileLabel');
-                    fileLabel.textContent = fileName; // Menampilkan nama file di label
-                    document.getElementById('sampulFileName').value = fileName; // Menyimpan nama file di hidden input
+                    fileLabel.textContent = fileName; // Displaying the file name in the label
+                    document.getElementById('sampulFileName').value = fileName; // Storing the file name in hidden input
                 });
 
                 // Set the file label to the old file name if validation fails
                 window.onload = function() {
                     var oldFileName = document.getElementById('sampulFileName').value;
                     if (oldFileName) {
-                        document.getElementById('fileLabel').textContent = oldFileName; // Menampilkan nama file yang sudah dipilih sebelumnya
+                        document.getElementById('fileLabel').textContent = oldFileName; // Displaying previously selected file name
                     }
                 };
             </script>
+
 
             <button type="submit" class="btn btn-primary">Simpan Data</button>
         </form>
